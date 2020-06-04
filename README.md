@@ -14,7 +14,14 @@ This is the bash file calling the jou files.
 ## mffoil03
 This is the file that has the information of the cores to be called. It is thought to be put at my desktop, which /home/user03/
 
+## seek_solution_Dichotomy.sh
+This file dominates the process of find the corresponding angle of attack to the fixed lift.
 
+## seek_solution_Dichotomy_test.sh
+this file tests the bash scripts for dichotomy.
+
+## seek_solution_steptrying.s
+This file illustrates the necessity of dicotomy.
 
 ## ~.xyz
 the mesh file of rae2822 benchmark case
