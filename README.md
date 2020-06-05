@@ -1,5 +1,6 @@
-# AnsysFluent17.9JouAndFixedLiftCal
-This repository provides cumulative jou script for Ansys Fluent 17.0 during my work.And how do I calculate aerodynamics under fixed lift.
+# AnsysFluent17.0JouAndFixedLiftCal
+This repository provides cumulative jou script for Ansys Fluent 17.0 during my work.
+And how I calculate aerodynamics under fixed lift.
 
 ## prep_1proc_sample.jou
 This journal is an example for importing a plot3d mesh, cutting the boudanry conditions, and set the types for them.
@@ -13,6 +14,7 @@ This is the bash file calling the jou files.
 
 ## mffoil03
 This is the file that has the information of the cores to be called. It is thought to be put at my desktop, which /home/user03/
+The content of it is simply a line: ibcn03:20
 
 ## seek_solution_Dichotomy.sh
 This file dominates the process of find the corresponding angle of attack to the fixed lift.
