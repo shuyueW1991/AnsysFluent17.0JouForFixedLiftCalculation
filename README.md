@@ -29,7 +29,7 @@ the mesh file of rae2822 benchmark case
 
 ## thought on convergence criterion
 ### physially...
-For lift fixed at 0.8234, it has four effective digits.
+For lift fixed at 0.8234 (of course it has to be multiplied with the reference length 0.4 due to the ignorance of my refernece value setting in fluent panel), it has four effective digits.
 Its toleranceis 4e-4 (w.r.t. absolute perspective).
 The amplitude for the calculated  CFD result for the current mesh pattern is appr. 8e-4.
 In order to contain the correct answer even when it is at its phase that is most far from the fixed lift value,  
