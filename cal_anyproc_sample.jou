@@ -30,8 +30,8 @@
 /solve/iterate 5000
 /file/export/ascii result_gamma1_FOILNAME_AOAdeg FOILNAME_AOAdeg_intmonitor1 () yes intermittency ()
 /file/export/ascii result_gamma2_FOILNAME_AOAdeg FOILNAME_AOAdeg_intmonitor2 () yes intermittency ()
-/file/export/ascii result_Cf1_FOILNAME_AOAdeg wall1 () yes Skin Friction Coefficient
-/file/export/ascii result_Cf2_FOILNAME_AOAdeg wall2 () yes Skin Friction Coefficient
+/file/export/ascii result_Cf1_FOILNAME_AOAdeg wall1 () yes skin-friction-coef ()
+/file/export/ascii result_Cf2_FOILNAME_AOAdeg wall2 () yes skin-friction-coef ()
 /report/forces/wall-forces no 8 14 16 17 () COS SIN yes result_total_drag_force_FOILNAME_AOAdeg
 /file/write-case/FOILNAME_AOAdeg_fin.cas
 /file/write-data/FOILNAME_AOAdeg_fin.dat
