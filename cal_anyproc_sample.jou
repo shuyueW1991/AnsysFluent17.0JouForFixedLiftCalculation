@@ -1,0 +1,40 @@
+/file/confirm-overwrite no
+/file/read-case/FOILNAMEprep.cas
+/define/boundary-conditions/pressure-far-field velocityinlet  no 99614 no 0.734 no 310 no COS no SIN no  no  yes no 1 0.2 10 
+/define/boundary-conditions/pressure-far-field outlet1  no 99614 no 0.734 no 310 no COS no SIN no  no  yes no 1 0.2 10 
+/define/boundary-conditions/pressure-far-field outlet2  no 99614 no 0.734 no 310 no COS no SIN no  no  yes no 1 0.2 10 
+/define/boundary-conditions/pressure-far-field outlet3  no 99614 no 0.734 no 310 no COS no SIN no  no  yes no 1 0.2 10 
+/report/reference-values/compute pressure-far-field velocityinlet
+/report/reference-values/length 0.4
+/solve/set/discretization-scheme/k 0
+/solve/set/discretization-scheme/omega 0
+/solve/set/discretization-scheme/retheta 0
+/solve/set/discretization-scheme/intermit 0
+/solve/monitors/residual/convergence-criteria 0.0001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
+/solve/monitors/force/set-drag-monitor Cd-FOILNAME-AOAdeg yes 17 16 8 14 () yes yes Cd-FOILNAME-AOAdeg yes 2 no COS SIN
+/solve/monitors/force/set-lift-monitor Cl-FOILNAME-AOAdeg yes 17 16 8 14 () yes yes Cl-FOILNAME-AOAdeg yes 3 no -SIN COS
+
+/solve/set/reporting-interval 10
+/solve/initialize/compute-defaults/all-zones
+/solve/initialize/initialize-flow
+/surface/transform-surface wall1 () 0 0 0 0  0.000075 0 FOILNAME_AOAdeg_intmonitor1
+/surface/transform-surface wall2 () 0 0 0 0  0.000075 0 FOILNAME_AOAdeg_intmonitor2
+/file/write-case/FOILNAME_AOAdeg.cas
+/file/write-data/FOILNAME_AOAdeg.dat
+
+/solve/set/courant-number 5
+/solve/iterate 10000
+/solve/set/courant-number 8
+/solve/iterate 5000
+/solve/set/courant-number 10
+/solve/iterate 5000
+/file/export/ascii result_gamma1_FOILNAME_AOAdeg FOILNAME_AOAdeg_intmonitor1 () yes intermittency ()
+/file/export/ascii result_gamma2_FOILNAME_AOAdeg FOILNAME_AOAdeg_intmonitor2 () yes intermittency ()
+/file/export/ascii result_Cf1_FOILNAME_AOAdeg wall1 () yes skin-friction-coef ()
+/file/export/ascii result_Cf2_FOILNAME_AOAdeg wall2 () yes skin-friction-coef ()
+/report/forces/wall-forces yes COS SIN yes result_total_drag_force_FOILNAME_AOAdeg
+/report/forces/wall-moments yes 0.1 0 0 0 1 yes result_total_moment_FOILNAME_AOAdeg
+/file/write-case/FOILNAME_AOAdeg_fin.cas
+/file/write-data/FOILNAME_AOAdeg_fin.dat
+exit
+
