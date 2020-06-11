@@ -17,6 +17,7 @@ The content of it is simply a line: ibcn03:20
 
 ## seek_solution_Dichotomy.sh
 This file dominates the process of find the corresponding angle of attack to the fixed lift.
+The dichotomy is modified with weights since before separation, the Cl-alpha curve should be monotonically increasing with angle of attack.
 
 ## seek_solution_Dichotomy_test.sh
 this file tests the bash scripts for dichotomy.
@@ -28,15 +29,7 @@ This file illustrates the necessity of dicotomy.
 the mesh file of rae2822 benchmark case
 
 ## thought on convergence criterion
-### physially...
-For lift fixed at 0.8234 (of course it has to be multiplied with the reference length 0.4 due to the ignorance of my refernece value setting in fluent panel), it has four effective digits.
-Its toleranceis 4e-4 (w.r.t. absolute perspective).
-The amplitude for the calculated  CFD result for the current mesh pattern is appr. 8e-4.
-In order to contain the correct answer even when it is at its phase that is most far from the fixed lift value,  
-the error should be the sum of the above two.
-Since the practical error is in squared form, the dist in the code should be 1.44e-10 less than before stopping iteration.
-Let us make it 5e-8 !
+For lift fixed at 0.824, it has three effective digits.
+Its toleranceis 5e-4 (w.r.t. absolute perspective).
+Since the practical error is in squared form, the dist in the code should be 2.5e-07 less than before stopping iteration.
 
-### digital accuracy...
-for initial values, the effective digits we want for the angle is 4, for example.
-For dichotomy, in order to get 3 times 1000 accuracy, we need to fold the piece in two for  12 times, because 2^12 > 3000
