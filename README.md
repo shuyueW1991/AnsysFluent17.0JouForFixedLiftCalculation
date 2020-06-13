@@ -7,7 +7,16 @@ The cutting involves the distribution of cores/processes designated by  jog user
 
 ## cal_anyproc_sample.jou
 Initialization and calculation.
-The convergence criterion of lift and drag coefficient is a realative ratio. Therefore, the absolute deviation is varified due to different angles of attack. The number now is a product of compromise.
+The convergence criterion of lift and drag coefficient is a realative ratio. Therefore, the absolute deviation is varified due to different angles of attack. The number now is a product of compromise. The discussion is as follows:
+
+Aoa *  Cl  *  Cd
+1    0.433  0.00507
+3    0.64   0.0067
+7    0.970  0.0301
+9    1.00   0.045
+
+For a fixed relative ratio,  the absolute deviation can be from 0.0001/0.433=0.0002 to 0.0009/1.00 for lift case, or from 0.0001/0.00507=0.02 to 0.0009/0.045=0.02 for drag case, given that we want lift force effective digit twinkles at the fourth place (cf. fixed lift force of 0.824) and drag force effective digit at the place of 0~9count (i.e. 0.000x).
+
 
 ## prep_cal.sh
 This is the bash file calling the jou files. They do the CFD work and some raw post-processing.
