@@ -50,7 +50,7 @@ else
 
     dist=$(echo "scale=9; ($fixlift - $lift_mid) *($fixlift - $lift_mid) " | bc )
     echo "dist=$dist"
-    comp=$(echo "scale=9; $dist > 0.000025" | bc )
+    comp=$(echo "scale=9; $dist > 0.00000025" | bc )
     echo "comp=$comp"
 
     while [ $comp -eq 1 ]
@@ -73,7 +73,7 @@ else
 	lift_mid=$(echo "$lift_mid"| awk '{printf("%.9f",$0)}')
     	dist=$(echo "scale=9; ($fixlift - $lift_mid) *($fixlift - $lift_mid) " | bc )
 	echo "dist=$dist"
-    	comp=$(echo "scale=9; $dist > 0.000025" | bc )
+    	comp=$(echo "scale=9; $dist > 0.00000025" | bc )
     	echo "comp=$comp"
     done
 fi
